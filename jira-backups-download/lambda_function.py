@@ -20,11 +20,9 @@
 # 1) Configure a secret in AWS Secrets Manager to store your Atlassian API
 #    credentials.
 #
-#    Use the following format for the secret value:
-#    {
-#      "email": "your-email@example.com",
-#      "api_token": "your-jira-api-token"
-#    }
+#    Use the following format for the secret key/value pairs:
+#      - email: your-email@example.com
+#      - api_token: your-jira-api-token
 #
 # 2) Configure a bucket in AWS S3 to store your Jira backup files.
 #
