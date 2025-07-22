@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
 # Author: Aaron Morris
 # Website: https://www.agile-innovations.tech
-# Version 1.0.0
-# Date: 2025-07-03
+# Version 1.0.1
+# Date: 2025-07-22
 #
 # License:
 # This source code is licensed under the MIT license found in the
@@ -33,11 +33,11 @@
 #      - SITE_NAME = "my-jira-site.atlassian.net"
 #      - CREDENTIALS_SECRET_NAME = "atlassian/backups/credentials"
 #      - CREDENTIALS_SECRET_REGION_NAME = "us-east-1"
-#      - S3_BUCKET_NAME = "jira-backups"
+#      - S3_BUCKET_NAME = "my-company-jira-backups"
 # -----------------------------------------------------------------------------
 
 import boto3
-from datetime import datetime
+from datetime import datetime, UTC
 import json
 import os
 import requests
@@ -129,7 +129,7 @@ def download_file(credentials, site_name, download_url):
 
 
 def upload_to_s3(backup_file):
-    filename = f"jira-backup-{datetime.utcnow().strftime('%Y-%m-%dT%H-%M-%SZ')}.zip"
+    filename = f"jira-backup-{datetime.now(UTC).strftime('%Y-%m-%dT%H-%M-%SZ')}.zip"
     print(f"Uploading to S3: {filename}")
     s3 = boto3.client("s3")
     s3.upload_fileobj(
