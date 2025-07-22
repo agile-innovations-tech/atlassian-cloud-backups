@@ -22,7 +22,7 @@
 #
 #    Use the following format for the secret key/value pairs:
 #      - email: your-email@example.com
-#      - api_token: your-jira-api-token
+#      - api_token: your-atlassian-api-token
 #
 # 2) Configure the following environment variables for your Lambda function:
 #    SITE_NAME, CREDENTIALS_SECRET_NAME, CREDENTIALS_SECRET_REGION_NAME
@@ -87,7 +87,7 @@ def trigger_backup(credentials, include_attachments):
 
     site_name = os.environ['SITE_NAME']
 
-    print("Triggering Jira Cloud backup...")
+    print("Triggering Confluence Cloud backup...")
 
     # Note: This API is undocumented and unsupported by Atlassian.
     response = requests.post(
