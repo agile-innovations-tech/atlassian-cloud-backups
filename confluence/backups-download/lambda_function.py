@@ -13,7 +13,7 @@
 # This script is intended to be used as an AWS Lambda function. It downloads the most
 # recent backup file from a Confluence Cloud site and uploads the backup to S3.
 #
-# TODO: Video Tutorial: TBD
+# Video Tutorial: https://youtu.be/t_ODiHXi3us
 #
 # Prerequisites:
 #

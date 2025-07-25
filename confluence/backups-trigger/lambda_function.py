@@ -13,7 +13,7 @@
 # This script is intended to be used as an AWS Lambda function. It triggers the
 # generation of a Confluence Cloud backup.
 #
-# TODO: Video Tutorial: TBD
+# Video Tutorial: https://youtu.be/t_ODiHXi3us
 #
 # Prerequisites:
 #
